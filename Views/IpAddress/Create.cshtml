@@ -1,0 +1,20 @@
+﻿@model IpManagement.Models.IpAddressModel
+
+<hi>Create  Ip Address</hi>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="IpAddress"> Ip Address</label>
+        <input asp-for="IpAddress" class="form-control"/>
+        <span asp-validation-for="IpAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status">Status</label>
+        <select asp-for="Status" class="form-control">
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+<button type="submit" class="btn btn-primary">Create</button>
+</form>

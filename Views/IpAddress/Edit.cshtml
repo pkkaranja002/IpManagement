@@ -1,0 +1,23 @@
+﻿@model IpManagement.Models.IpAddressModel
+
+<h1>Edit IpAddress</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id"/>
+    <div class="form-group">
+        <label asp-for="IpAddress">IpAddress</label>
+        <input asp-for="IpAddress" class="form-control"/>
+        <span asp-validation-for="IpAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status"> Status:</label>
+        <select asp-for="Status" class="form-control">
+            <option value="Available">Available</option>
+            <option value="Unavailable"> Unavailable</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes </button>
+
+
+</form>

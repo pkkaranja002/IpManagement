@@ -76,6 +76,16 @@ namespace IpManagement.Controllers
             return View(ipAAddressModel);
         }
 
+
+        // GET: Api/IpAddress
+        [HttpGet("Api/IpAddress")]
+        public async Task<IActionResult> GetAllIpAddresses()
+        {
+            var ipAddresses = await _context.IpAddresses.ToListAsync();
+            return Ok(ipAddresses); // Return the list of IP addresses as JSON
+        }
+
+
         //POST: IpAddress/Delete/5
         [HttpPost,ActionName("Delete")]
         [ValidateAntiForgeryToken]

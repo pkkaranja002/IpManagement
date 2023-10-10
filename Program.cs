@@ -39,6 +39,11 @@ namespace IpManagement
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+            app.MapControllerRoute(
+                name: "ipAddress",
+                pattern: "IpAddress/{action=Index}/{id?}",
+                defaults: new { controller = "IpAddress" });
+
             app.Run();
         }
     }

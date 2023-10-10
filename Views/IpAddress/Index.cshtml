@@ -1,0 +1,28 @@
+﻿@model List<IpAddressModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>IP Address</th>
+            <th>Status</th>
+            <th>Action</th> <!-- Add a new column for actions -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ipAddress in Model)
+        {
+            <tr>
+                <td>@ipAddress.Id</td>
+                <td>@ipAddress.IpAddress</td>
+                <td>@ipAddress.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@ipAddress.Id" class="btn btn-primary">Edit</a>
+                    <form asp-action="Delete" asp-route-id="@ipAddress.Id" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
